@@ -348,42 +348,151 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24 px-4 bg-black">
-        <div className="max-w-7xl mx-auto">
+      {/* Featured Film Section - El llanto del perro */}
+      <section className="py-24 px-4 bg-black relative overflow-hidden">
+        {/* Background texture */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, #dc2626 2px, #dc2626 4px)' }} />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div {...fadeInUp} className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-red-600/20 border border-red-600 rounded-full mb-6">
+              <span className="text-red-500 font-semibold uppercase text-sm tracking-wider">
+                Proyecto Destacado
+              </span>
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Nuestro <span className="text-red-600">Equipo</span>
+              <span className="text-red-600">{featuredFilm.title}</span>
             </h2>
             <div className="w-24 h-1 bg-red-600 mx-auto mb-8" />
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              {featuredFilm.genre} • {featuredFilm.year}
+            </p>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {team.map((member) => (
-              <motion.div key={member.id} variants={fadeInUp}>
-                <Card className="bg-zinc-900 border-zinc-800 hover:border-red-600 transition-all duration-300 overflow-hidden group">
-                  <div className="relative overflow-hidden aspect-square">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60" />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Video/Poster Section */}
+            <motion.div {...fadeInUp} className="relative group">
+              <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl border border-zinc-800">
+                <img
+                  src={featuredFilm.posterImage}
+                  alt={featuredFilm.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <Play className="text-white ml-1" size={32} fill="white" />
                   </div>
-                  <CardContent className="p-6 text-center">
-                    <h3 className="text-xl font-bold mb-2 text-white">{member.name}</h3>
-                    <p className="text-red-500 font-semibold mb-3">{member.role}</p>
-                    <p className="text-gray-400 text-sm">{member.bio}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+                </div>
+
+                {/* Duration Badge */}
+                <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
+                  <span className="text-white text-sm font-semibold">{featuredFilm.duration}</span>
+                </div>
+              </div>
+
+              {/* Awards */}
+              {featuredFilm.awards && featuredFilm.awards.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                  className="mt-6 space-y-2"
+                >
+                  {featuredFilm.awards.map((award, index) => (
+                    <div key={index} className="flex items-center text-gray-400 text-sm">
+                      <Award className="text-red-600 mr-2 flex-shrink-0" size={16} />
+                      {award}
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </motion.div>
+
+            {/* Film Info Section */}
+            <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
+              <h3 className="text-3xl font-bold mb-6 text-white">
+                Sinopsis
+              </h3>
+              <div className="space-y-4 text-gray-300 leading-relaxed mb-8">
+                <p className="text-lg">{featuredFilm.description}</p>
+                <p>{featuredFilm.synopsis}</p>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  size="lg"
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-lg rounded-full group"
+                  onClick={() => window.open(featuredFilm.trailerUrl, '_blank')}
+                >
+                  <Play className="mr-2 group-hover:scale-110 transition-transform" />
+                  Ver Trailer
+                </Button>
+
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-8 py-6 text-lg rounded-full group"
+                    >
+                      <Users className="mr-2 group-hover:scale-110 transition-transform" />
+                      Ver Productores
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="bg-zinc-900 border-zinc-800 text-white max-w-3xl max-h-[90vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold text-red-600 mb-2">
+                        Productores de "{featuredFilm.title}"
+                      </DialogTitle>
+                      <DialogDescription className="text-gray-400">
+                        Conoce al equipo creativo detrás de este thriller psicológico
+                      </DialogDescription>
+                    </DialogHeader>
+
+                    <div className="grid md:grid-cols-2 gap-6 mt-6">
+                      {producers.map((producer) => (
+                        <motion.div
+                          key={producer.id}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: producer.id * 0.1 }}
+                        >
+                          <Card className="bg-zinc-800 border-zinc-700 overflow-hidden h-full">
+                            <div className="relative aspect-square overflow-hidden">
+                              <img
+                                src={producer.image}
+                                alt={producer.name}
+                                className="w-full h-full object-cover"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                            </div>
+                            <CardContent className="p-6">
+                              <h3 className="text-xl font-bold mb-2 text-white">
+                                {producer.name}
+                              </h3>
+                              <p className="text-red-500 font-semibold mb-3 text-lg">
+                                {producer.role}
+                              </p>
+                              <p className="text-gray-400 text-sm leading-relaxed">
+                                {producer.bio}
+                              </p>
+                            </CardContent>
+                          </Card>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
