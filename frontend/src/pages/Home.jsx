@@ -10,16 +10,27 @@ import {
   Star,
   ArrowRight,
   Play,
+  Award,
+  Users,
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '../components/ui/dialog';
 import { useToast } from '../hooks/use-toast';
 import {
   services,
   projects,
-  team,
+  producers,
+  featuredFilm,
   testimonials,
   galleryImages,
 } from '../data/mock';
