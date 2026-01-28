@@ -104,14 +104,14 @@ export const producers = [
     id: 1,
     name: 'MIRANDA DE LA SERNA',
     role: 'Co-fundadora · Productora',
-    image: '/images/foto-mir.jpg',
+    image: `${process.env.PUBLIC_URL}/images/foto-mir.jpg`,
     bio: 'Actriz, guionista y productora argentina formada con Nora Moseinco y Gaby Ferrero. Fue revelación en Errante Corazón (Premio Sur) y trabajó en Amor Urgente, Bruja, Now & Then y Elena Sabe. Es cofundadora de Cinegata y guionista, productora y protagonista de El Llanto del Perro, film con el que obtuvo premios a Mejor Guion Iberoamericano, Mejor Guion en el Rojo Sangre y Mejor Actriz Iberoamericana. Es una de las voces más potentes del nuevo cine de género argentino.',
   },
   {
     id: 2,
     name: 'FEDERICO VENZI',
     role: 'Co-fundador · Productor',
-    image: '/images/foto-fede.jpg',
+    image: `${process.env.PUBLIC_URL}/images/foto-fede.jpg`,
     bio: 'Actor, director, productor y guionista argentino nacido en Buenos Aires y formado en el IUNA y el Teatro San Martín. Participó en las teleseries argentinas Esperanza Mía, Divina y Tercer Tiempo, y en dos producciones internacionales: la serie española Entre Olivos y la serie mexicana La Piloto. En cine actuó en Un Viaje a la Luna, Alemania y El Sótano. Es cofundador de Cinegata y guionista, productor y director de El Llanto del Perro, película premiada por su guión, actuación y edición en la competencia iberoamericana del festival Buenos Aires Rojo Sangre. Su trabajo lo posiciona como una voz creativa emergente dentro del cine independiente argentino.',
   },
 ];
@@ -123,7 +123,7 @@ export const featuredFilm = {
   year: '2025',
   description: 'Un thriller psicológico que explora los límites de la cordura humana. Cuando los sonidos de la noche revelan secretos enterrados, la línea entre la realidad y la pesadilla se desvanece.',
   synopsis: 'Una familia se muda a una casa aislada en el campo. Durante las noches, escuchan el llanto persistente de un perro que nadie más parece oír. Lo que comienza como un misterio se transforma en una pesadilla psicológica que desenterrará oscuros secretos del pasado.',
-  posterImage: '/images/frame1.jpg',
+  posterImage: `${process.env.PUBLIC_URL}/images/frame1.jpg`,
   // trailerUrl: '/video/ELDP_EDIT_TRAILER_SUBS.mp4',
   awards: ['Mejor Thriller - Festival de Cine Independiente 2024', 'Mención Especial - Dirección'],
 };
@@ -155,32 +155,32 @@ export const testimonials = [
 export const galleryImages = [
   {
     id: 1,
-    url: '/images/frame2.jpg',
+    url: `${process.env.PUBLIC_URL}/images/frame2.jpg`,
     alt: 'Behind the scenes rodaje',
   },
   {
     id: 2,
-    url: '/images/frame3.jpg',
+    url: `${process.env.PUBLIC_URL}/images/frame3.jpg`,
     alt: 'Equipo de producción',
   },
   {
     id: 3,
-    url: '/images/frame4.jpg',
+    url: `${process.env.PUBLIC_URL}/images/frame4.jpg`,
     alt: 'Set de grabación',
   },
   {
     id: 4,
-    url: '/images/frame5.jpg',
+    url: `${process.env.PUBLIC_URL}/images/frame5.jpg`,
     alt: 'Dirección de fotografía',
   },
   {
     id: 5,
-    url: '/images/frame6.jpg',
+    url: `${process.env.PUBLIC_URL}/images/frame6.jpg`,
     alt: 'Equipo técnico',
   },
   {
     id: 6,
-    url: '/images/frame7.jpg',
+    url: `${process.env.PUBLIC_URL}/images/frame7.jpg`,
     alt: 'Post-producción',
   },
 ];
