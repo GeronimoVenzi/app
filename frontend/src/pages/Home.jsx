@@ -354,7 +354,7 @@ const Home = () => {
                   poster={featuredFilm.posterImage}
                   className="w-full h-full object-cover"
                 >
-                  <source src={featuredFilm.trailerUrl} type="video/mp4" />
+                  {/* <source src={featuredFilm.trailerUrl} type="video/mp4" /> */}
                   Tu navegador no soporta la reproducción de video.
                 </video>
               </div>
@@ -401,7 +401,35 @@ const Home = () => {
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="bg-zinc-900 border-zinc-800 text-white max-w-3xl max-h-[90vh] overflow-y-auto">
-                    {/* ...existing code... */}
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-bold text-white mb-4">
+                        Productores
+                      </DialogTitle>
+                      <DialogDescription className="text-gray-400">
+                        Conoce al equipo detrás de {featuredFilm.title}
+                      </DialogDescription>
+                    </DialogHeader>
+
+                    <div className="space-y-8 mt-6">
+                      {producers.map((producer) => (
+                        <div key={producer.id} className="flex flex-col md:flex-row gap-6">
+                          <img
+                            src={producer.image}
+                            alt={producer.name}
+                            className="w-32 h-32 rounded-lg object-cover"
+                          />
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold text-white mb-1">
+                              {producer.name}
+                            </h3>
+                            <p className="text-red-500 text-sm mb-3">{producer.role}</p>
+                            <p className="text-gray-300 text-sm leading-relaxed">
+                              {producer.bio}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </DialogContent>
                 </Dialog>
               </div>

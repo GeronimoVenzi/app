@@ -124,7 +124,7 @@ export const featuredFilm = {
   description: 'Un thriller psicológico que explora los límites de la cordura humana. Cuando los sonidos de la noche revelan secretos enterrados, la línea entre la realidad y la pesadilla se desvanece.',
   synopsis: 'Una familia se muda a una casa aislada en el campo. Durante las noches, escuchan el llanto persistente de un perro que nadie más parece oír. Lo que comienza como un misterio se transforma en una pesadilla psicológica que desenterrará oscuros secretos del pasado.',
   posterImage: '/images/frame1.jpg',
-  trailerUrl: '/video/ELDP_EDIT_TRAILER_SUBS.mp4',
+  // trailerUrl: '/video/ELDP_EDIT_TRAILER_SUBS.mp4',
   awards: ['Mejor Thriller - Festival de Cine Independiente 2024', 'Mención Especial - Dirección'],
 };
 
