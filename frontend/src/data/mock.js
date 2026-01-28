@@ -97,36 +97,36 @@ export const projects = [
   },
 ];
 
-export const team = [
+// Productores de "El llanto del perro"
+export const producers = [
   {
     id: 1,
-    name: 'Lucía Montero',
-    role: 'Directora Creativa',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-    bio: '15 años de experiencia en cine y publicidad',
+    name: 'Alejandro Martínez',
+    role: 'Director',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
+    bio: 'Director y guionista con más de 10 años de experiencia en cine de suspenso. Especializado en narrativas psicológicas y atmósferas inquietantes.',
   },
   {
     id: 2,
-    name: 'Martín Vega',
-    role: 'Director de Fotografía',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
-    bio: 'Especialista en cinematografía digital',
-  },
-  {
-    id: 3,
-    name: 'Sofia Ramírez',
-    role: 'Editora Principal',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
-    bio: 'Experta en narrativa visual y post-producción',
-  },
-  {
-    id: 4,
-    name: 'Diego Torres',
-    role: 'Productor Ejecutivo',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80',
-    bio: 'Gestión integral de proyectos audiovisuales',
+    name: 'Carolina Vega',
+    role: 'Co-Directora',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+    bio: 'Co-directora y directora de fotografía. Experta en crear ambientes visuales que potencian la tensión narrativa del thriller.',
   },
 ];
+
+// Información de la película destacada
+export const featuredFilm = {
+  title: 'El llanto del perro',
+  genre: 'Thriller Psicológico',
+  duration: '1:24',
+  year: '2024',
+  description: 'Un thriller psicológico que explora los límites de la cordura humana. Cuando los sonidos de la noche revelan secretos enterrados, la línea entre la realidad y la pesadilla se desvanece.',
+  synopsis: 'Una familia se muda a una casa aislada en el campo. Durante las noches, escuchan el llanto persistente de un perro que nadie más parece oír. Lo que comienza como un misterio se transforma en una pesadilla psicológica que desenterrará oscuros secretos del pasado.',
+  posterImage: 'https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=800&q=80',
+  trailerUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder - reemplazar con URL real
+  awards: ['Mejor Thriller - Festival de Cine Independiente 2024', 'Mención Especial - Dirección'],
+};
 
 export const testimonials = [
   {
